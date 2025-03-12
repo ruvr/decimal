@@ -335,3 +335,10 @@ func (d Decimal) IsPositive() bool {
 func (d Decimal) IsNegative() bool {
 	return d.Sign() == -1
 }
+
+// InexactFloat64 returns the nearest float64 value for d.
+// It doesn't indicate if the returned value represents d exactly.
+func (d Decimal) InexactFloat64() float64 {
+	f, _ := d.Float64()
+	return f
+}
